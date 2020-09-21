@@ -13,9 +13,9 @@ RSpec.describe "post endpoint", type: :request do
     end 
 
     describe "Search data" do    
-      let!(:hola_mundo) { create(:post, title: "Hola Mundo") }
-      let!(:hola_rails) { create(:post, title: "Hola Rails") }
-      let!(:curso_ruby) { create(:post, title: "Curso Ruby") }
+      let!(:hola_mundo) { create(:published_post, title: "Hola Mundo") }
+      let!(:hola_rails) { create(:published_post, title: "Hola Rails") }
+      let!(:curso_ruby) { create(:published_post, title: "Curso Ruby") }
       it "should filter posts by title" do
         get "/posts?search=Hola"
         payload = JSON.parse(response.body)

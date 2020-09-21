@@ -6,7 +6,7 @@ FactoryBot.define do
     user
   end
 
-  factory :published_post do
+  factory :published_post, class: 'Post' do
     title { Faker::Lorem.sentence }
     content { Faker::Lorem.paragraph }
     published { true }
